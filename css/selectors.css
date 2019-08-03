@@ -1,32 +1,117 @@
-/* selector for id="container" */
-#container {
-    margin: 50px auto;
-    width: 500px;
-    padding: 10px;
+body {box-sizing: border-box;
+
 }
 
-
-#container h1.fancy-header {
-    color: blue;
+div.fancy-header.transbox {display: flex;
+    justify-content: center;
+    color: black;
     text-decoration: underline;
-}
-/*  selector for all "h1" elements
-that are a descendent of id="container"
-and have a class of "fancy-header" */
+    background-color: lightseagreen;
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    text-shadow: 0.1em 0.1em 0.15em lightpink;
+    margin: auto;
+    width: 100%;
+    font-size: 300%;
 
-em {
+}
+h3 { color: black;
+    font-family: 'Indie Flower', cursive;
+    font-size: xx-large;
+    text-decoration: underline;
+    text-align: center;
+    text-shadow: 0.1em 0.1em 0.15em gray;
+}
+
+p{  color: black;
+    font-size: xx-large;
     font-weight: bold;
-}
-/* selector for all "em" elements */
+    font-family: 'Indie Flower', cursive;
+    text-shadow: 0.1em 0.1em 0.15em darkslategrey;
 
-.article {
-    clear:both;
-}
-/* selector for all elements with class="article" */
 
-.article>a{
-    float:right;
+}
+body {
+    background-color: black;
+    background-image: url(../images/white-brick-background.jpg); position: relative;
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
 }
 
-/*  selector for all "anchor" elements
-that are a direct child of an element with class="article" */
+img {margin: 20px;
+    height: 300px;
+    width: 400px;
+    box-shadow: 10px 10px .15em darkslategrey;
+    border: 10px solid black;
+
+
+}
+
+div {background: rgb(198 253 227);
+    text-align: center;
+    margin: auto;
+    width: 40%;
+    height: 80%;
+    box-shadow: 1em 1em .15em darkslategrey;
+}
+
+div.transbox {
+    font-weight: bold;
+    color: #000000;
+    opacity: 0.8;
+    border: 5px solid black;
+
+}
+ul  {list-style: circle inside;
+    width:200px;
+    margin:0 auto;
+    text-align:left;
+    padding: 5%;
+
+
+}
+
+ol { list-style: upper-alpha ;
+    width:500px;
+    margin: 0 auto;
+    text-align:left;
+    padding: 5% 30%;
+
+}
+
+table {margin: auto;
+    border: 5px solid black;
+    padding: 15px;
+    box-shadow: 1em 1em 0.15em darkslategrey;
+    height: 50%;
+    width: 50%;
+}
+
+th {font-family: "Mishafi Gold";
+
+}
+
+
+/* unvisited link (:link) */
+a:link {
+    color:darkslategray;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:black;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:lightpink;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
+}
+"article" */
