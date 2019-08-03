@@ -1,0 +1,107 @@
+* {box-sizing: border-box;
+    margin: 0;
+}
+
+body {box-sizing: border-box;
+    position: fixed;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    height: 100vh;
+    width: 100%;
+    grid-gap: 10px;
+    background-color: white;
+
+}
+
+one {grid-area: 1 / 1 / 2 / 5;
+    background-color: rgb(250 208 9);
+    padding-top: 10px;
+    padding-left: 10px;
+    color: white;
+    font-size: 50px;
+
+
+}
+
+two {grid-area: 2 / 1 / 6 / 2;
+    background-color: rgb(250 208 9);
+    padding-top: 10px;
+    padding-left: 10px;
+    color: white;
+    font-size: 50px;
+
+
+}
+
+three {grid-area: 2 / 2 / 3 / 3;
+    background-color: rgb(250 208 9);
+    padding-top: 10px;
+    padding-left: 10px;
+    color: white;
+    font-size: 50px;
+
+}
+
+four {grid-area: 2 / 3 / 3 / 5;
+    background-color: rgb(250 208 9);
+    padding-top: 10px;
+    padding-left: 10px;
+    color: white;
+    font-size: 50px;
+
+}
+
+five {grid-area: 3 / 2 / 4 / 4;
+    background-color: rgb(250 208 9);
+    padding-top: 10px;
+    padding-left: 10px;
+    color: white;
+    font-size: 50px;
+
+}
+
+six {grid-area: 3 / 4 / 4 / 5;
+    background-color: rgb(250 208 9);
+    padding-top: 10px;
+    padding-left: 10px;
+    color: white;
+    font-size: 50px;
+
+}
+
+seven {grid-area: 4 / 2 / 5 / 3;
+    background-color: rgb(250 208 9);
+    padding-top: 10px;
+    padding-left: 10px;
+    color: white;
+    font-size: 50px;
+
+}
+
+eight {grid-area: 4 / 3 / 5 / 4;
+    background-color: rgb(250 208 9);
+    padding-top: 10px;
+    padding-left: 10px;
+    color: white;
+    font-size: 50px;
+
+}
+
+nine {grid-area: 4 / 4 / 5 / 5;
+    background-color: rgb(250 208 9);
+    padding-top: 10px;
+    padding-left: 10px;
+    color: white;
+    font-size: 50px;
+
+}
+
+ten {
+    grid-area: 5 / 2 / 6 / 5;
+    background-color: rgb(250 208 9);
+    padding-top: 10px;
+    padding-left: 10px;
+    color: white;
+    font-size: 50px;
+}
