@@ -288,21 +288,34 @@
     }
 
 
-    .content {
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        width: 500px;
-        height: 300px;
-        margin: auto;
-        border: 10px solid rgb(225 225 225);
-        border-radius: 2%;
-        line-height: 90%;
+    .content{display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: auto;
+            justify-content: center;
+
 
     }
 
-    .security {display: none;}
+    .apple {
+        grid-area: 1 / 1 / 2 /2 ;
+        border: 10px solid rgb(225 225 225);
+        border-radius: 20px;
+        height: 500px;
+        width: 500px;
 
+
+
+    }
+
+
+    .apple2{display: none;
+    }
+
+    .security {height: 2px;
+            width: 2px;
+        display: none;
+
+    }
     footer {
         display: grid;
         flex-direction: row;
@@ -428,7 +441,9 @@
     }
 
 
-    @media screen and (min-width: 765px) {
+    @media screen and (min-width: 765px) and (max-width: 996px)
+
+    {
 
         html body {
             box-sizing: border-box;
@@ -684,34 +699,41 @@
             margin-top: 80px;
             margin-bottom: 40px;
         }
-     }
 
-    .content {display: grid;
-            grid-template-rows: auto;
-            grid-template-columns: auto auto;
-            border: 0;
-            margin: 0;
-            grid-gap: 15px;
-    }
+        .content {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 50% 50%;
+            justify-content: center;
+            grid-gap: 50px;
+        }
 
-        .apple {
+
+        .apple1{display: none;
+
+        }
+
+        .apple2 {
+            display: grid;
             grid-area: 1 / 1 / 2 / 2;
             height: 300px;
             width: 300px;
             border: 0;
             padding-left: 30%;
 
+
         }
 
-        .security {
+       .security {display: grid;
             grid-area: 1/ 2 / 2 /3;
             height: 300px;
             width: 300px;
             border: 0;
-            padding-left: 30%;
+            z-index: 500;
 
 
         }
+
 
 
     }
