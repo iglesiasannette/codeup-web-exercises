@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<div id="top"></div>
+<body>
+
+<script>
+    "use strict";
+
+    console.log('Hello from External JavaScript!');
+
+    alert("Welcome to my Website!");
+
+    var userInput = prompt('What is your favorite color?');
+    console.log('The user entered: ' + userInput);
+
+    alert( userInput + ' is my favorite color too!');
+
+/* Movie Rental Word Problem */
+
+
+    alert("Greetings, fellow movie lover! Which movies are you renting today?");
+
+    var userInput1 = prompt('Movie 1?');
+    console.log('The user entered: ' + userInput1);
+
+    alert( "NICE! " + userInput1 + " is a classic. ");
+
+    // the following line will show the OK/CANCEL confirm dialog
+    var confirmed1 = confirm("Are you renting any other movies?");
+    console.log(confirmed1); // will be either true or false
+
+    alert( "Very cool. What else is on your watchlist?");
+
+    var userInput2 = prompt('Movie 2?');
+    console.log('The user entered: ' + userInput2);
+
+    alert("You have great taste!");
+
+    var confirmed2 = confirm("Any other movies you'll be renting today?");
+    console.log(confirmed2); // will be either true or false
+
+    var userInput3 = prompt('Movie 3?');
+    console.log('The user entered: ' + userInput3);
+
+    var confirmed3 = confirm("That is a solid collection. Will this complete your rental?");
+    console.log(confirmed3)
+
+    alert ("How much does each rental cost per day?");
+
+    var priceOfRentalPerDay = prompt("Price of rental per day?");
+    console.log('The user entered: ' + priceOfRentalPerDay);
+
+    alert("How many days will you be renting each movie?");
+
+    var userInput1DaysRented = prompt(userInput1 + " ?");
+    console.log('The user entered: ' + userInput1DaysRented);
+
+    var userInput2DaysRented = prompt(userInput2 + " ?");
+    console.log('The user entered: ' + userInput2DaysRented);
+
+    var userInput3DaysRented = prompt(userInput3 + " ?");
+    console.log('The user entered: ' + userInput3DaysRented);
+
+    alert("Fantastic! Your grand total is $" + ((Number(userInput1DaysRented) + Number(userInput2DaysRented) + Number(userInput3DaysRented)) * (parseInt(priceOfRentalPerDay))) + " dollars.");
+
+
+
+    /* Contractor Exercise*/
+
+
+    alert("Where do you work?");
+
+    var company1 = prompt('Place of work');
+    console.log('The user entered: ' + company1);
+
+    alert("Anywhere else?");
+
+    var company2 = prompt('Place of work');
+    console.log('The user entered: ' + company2);
+
+    alert("Anywhere else?");
+
+    var company3 = prompt('Place of work');
+    console.log('The user entered: ' + company3);
+
+    alert("How many hours did you work at each job and how much do you get paid per hour at each job?")
+
+    var ratePerHourAtCompany1 = prompt('Rate per hour at ' + company1 + " :");
+    console.log('The user entered: ' + ratePerHourAtCompany1);
+
+    var hoursWorkedAtCompany1 = prompt('Hours worked at ' + company1 + " :");
+    console.log('The user entered: ' + hoursWorkedAtCompany1);
+
+    var ratePerHourAtCompany2 = prompt('Rate per hour at ' + company2 + " :");
+    console.log('The user entered: ' + ratePerHourAtCompany2);
+
+    var hoursWorkedAtCompany2 = prompt('Hours worked at ' + company2 + " :");
+    console.log('The user entered: ' + hoursWorkedAtCompany2);
+
+    var ratePerHourAtCompany3 = prompt('Rate per hour at ' + company3 + " :");
+    console.log('The user entered: ' + ratePerHourAtCompany3);
+
+    var hoursWorkedAtCompany3 = prompt('Hpurs worked at ' + company3 + " :");
+    console.log('The user entered: ' + hoursWorkedAtCompany3);
+
+    alert("You average weekly pay is $" + ((parseInt(ratePerHourAtCompany1) * parseInt(hoursWorkedAtCompany1) + (parseInt(ratePerHourAtCompany2) * parseInt(hoursWorkedAtCompany2)) +  (parseInt(ratePerHourAtCompany3) * parseInt(hoursWorkedAtCompany3)) + " dollars per week.")));
+
+
+
+
+    /* Student Enrollment */
+
+    alert("Thanks for your interest in taking BioChem!");
+
+    var classFull = prompt('Is the class full?');
+    console.log('The user entered: ' + classFull);
+
+    var scheduleConflict = prompt('Does this class pose a schedule conflict?');
+    console.log('The user entered: ' + scheduleConflict);
+
+
+
+    if (classFull && scheduleConflict === "no")
+        alert ("Congrats! You're in!");
+    else {
+        alert("So, sorry! Maybe next semester.");
+    }
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
