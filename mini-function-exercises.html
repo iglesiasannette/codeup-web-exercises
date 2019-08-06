@@ -14,12 +14,13 @@
 // <!--// Return false otherwise.-->
 
 /* Question 1 */
-// function isFive(input) {
-//     var output = input == 5;
-//     return output;
-// }
-//
-//     console.log(isFive("5"))
+
+        function isFive(input) {
+         var output = input === "5" || input === 5;
+         return output;
+            }
+
+          console.log(isFive("5"))
 
 
 // function name "isShortWord"
@@ -30,21 +31,21 @@
     function isShortWord(input) {
     var output = +input.length < 5;
     return output;
-}
+         }
 
-console.log(isShortWord(""))
+    console.log(isShortWord(""));
 
 // function name "isSameLength"
 // two inputs
 //output is a boolean value true if the passed arguments are the same length.
 // Return false otherwise.
 
-    function isSameLength(input1, input2) {
-        var output = input1.length === input2.length;
+       function isSameLength(input1, input2) {
+        var output= input1.length === input2.length;
         return output;
-    }
+            }
 
-    console.log(isSameLength("four", "five,"))
+        console.log(isSameLength("four", "five,"));
 
 
 // function name "getSmallerSegment"
@@ -52,13 +53,24 @@ console.log(isShortWord(""))
 // first input is a string, second input is a number
 //output is a substring of input1 that is as many characters long as input2, in lowercase
 
-    function getSmallerSegment(input1, input2){
+        function getSmallerSegment(input1, input2){
         var output = input1.substring(0, input2);
         return output.toLowerCase()
-    }
+            }
 
-    console.log(getSmallerSegment("ANNETTE", "2"))
+        console.log(getSmallerSegment("ANNETTE", "2"));
 
+
+
+/* return value as odd number */
+
+        function isOdd(number) {
+        var output =  number % 2 === 1;
+        return output;
+
+            }
+
+        console.log(isOdd("0"));
 
 </script>
 </body>
