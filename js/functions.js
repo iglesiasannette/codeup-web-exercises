@@ -1,3 +1,7 @@
+(function(){
+
+
+
 "use strict";
 
 /**
@@ -136,6 +140,10 @@ function applyDiscount(originalPrice, discountPercent){
 
 }
 
+    function formatNumToCurrency(num) {
+    return "$" + num.toFixed(2);
+ }
+
 console.log(applyDiscount( 0.25, 25.00 ));
 
 
@@ -146,4 +154,6 @@ var discountPercent = prompt ("How much is this item being discounted?");
 console.log("The user entered" + discountPercent);
 
 
-alert("The price after the discount comes out to $ " + (originalPrice - (originalPrice * (discountPercent/100))));
+alert("The price after the discount comes out to $ " + formatNumToCurrency(applyDiscount(originalPrice, discountPercent)));
+
+})();
