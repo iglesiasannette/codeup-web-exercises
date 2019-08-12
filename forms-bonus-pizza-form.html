@@ -1,0 +1,58 @@
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Place An Order!</title>
+</head>
+<body>
+<h1><i>* Place An Order Today *</i></h1>
+<form method="POST" action="https://request-inspector.glitch.me/">
+    <hr>
+    <h2><label for="size_of_pizza">Select Size of Pie</h2>
+    <select id="size_of_pizza" name="size_of_pizza">
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+    </select>
+    <br>
+    <br>
+    <hr>
+    <h2>Select Your Pie</h2>
+    <label for="cheese">Cheese</label>
+    <input id="cheese" type="radio" name="type_of_pie" value="Cheese"></label><br>
+    <lab"el for="veggie">Veggie</label>
+    <input id="veggie" type="radio" name="type_of_pie" value="Veggie"></label><br>
+    <label for="meat_lovers">Meat Lovers</label>
+    <input id="meat_lovers" type="radio" name="type_of_pie" value="Meat Lovers"></label><br>
+    <label for="special_order">Special Order</label>
+    <input id="special_order" type="radio" name="type_of_pie" value="Special Order"></label><br>
+    <br>
+    <br>
+    <h2>Special Instructions</h2>
+    <br>
+    <label for="specifics"></label>
+    <textarea id="specifics" rows="20" cols="40">Specifications...</textarea>
+    <br>
+    <br>
+    <hr>
+    <h2>Contact Info</h2>
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" placeholder="Name">
+    <br>
+    <label for="contact_number">Contact Number</label>
+    <input id="contact_number" name="contact_number" type="text" placeholder="Contact Number"><br>
+    <label for="home_address">Home Address</label>
+    <input id="home_address" name="home_address" type="text" placeholder="Home Address">
+    <br>
+    <label for="email_address">Email Address</label>
+    <input id="email_address" name="email_address" type="text" placeholder="Email Address">
+    <br>
+    <input name="newsletter_signup" value="true" type="checkbox" checked>Sign Up For Coupons and Promotions
+    <br>
+    <br>
+    <input type="submit">
+    <input type="hidden" name="user_id" value="123">
+</form>
+</body>
+</html>
