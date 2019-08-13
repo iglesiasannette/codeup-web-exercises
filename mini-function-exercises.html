@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <title></title>
+</head>
+
+<body>
+
+<script>
+// <!--//name of function is "isFive"-->
+// <!--// one input-->
+// <!--// output is a boolean value of true if the passed argument is the number-->
+// <!--5 or the string "5"-->
+// <!--// Return false otherwise.-->
+
+/* Question 1 */
+
+        function isFive(input) {
+         var output = input === "5" || input === 5;
+         return output;
+            }
+
+          console.log(isFive("5"))
+
+
+// function name "isShortWord"
+// input is a string
+// output is the boolean value of true if argument is shorter than 5 characters
+// return false otherwise
+
+    function isShortWord(input) {
+    var output = +input.length < 5;
+    return output;
+         }
+
+    console.log(isShortWord(""));
+
+// function name "isSameLength"
+// two inputs
+//output is a boolean value true if the passed arguments are the same length.
+// Return false otherwise.
+
+       function isSameLength(input1, input2) {
+        var output= input1.length === input2.length;
+        return output;
+            }
+
+        console.log(isSameLength("four", "five,"));
+
+
+// function name "getSmallerSegment"
+//two inputs: a string and a number.
+// first input is a string, second input is a number
+//output is a substring of input1 that is as many characters long as input2, in lowercase
+
+        function getSmallerSegment(input1, input2){
+        var output = input1.substring(0, input2);
+        return output.toLowerCase()
+            }
+
+        console.log(getSmallerSegment("ANNETTE", "2"));
+
+
+
+/* return value as odd number */
+
+        function isOdd(number) {
+        var output =  number % 2 === 1;
+        return output;
+
+            }
+
+        console.log(isOdd("0"));
+
+</script>
+</body>
+</html>
