@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox 1</title>
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel='stylesheet' />
+    <script src = "js/keys.js"></script>
+    <script src="js/mapbox-utils.js"></script>
+</head>
+<body>
+
+<div id='map' style='width: 100%; height: 600px;'></div>
+<script>
+
+    var restaurants = [{
+        name: 'Hope Tung Vietnamese Cuisine',
+        address: 'North 10th Street',
+        coordinates: [-98.2235, 26.24079],
+        },
+        {
+            name: "Costa Mesa",
+            address: "North 10th Street",
+            coordinates: [-98.221373, 26.250965]
+        },
+
+        {
+            name: "Taqueria El Zarape",
+            address: "somewhere",
+            coordinates: [-98.150141, 26.299974]
+
+
+    }];
+
+
+    mapboxgl.accessToken = mapboxToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        center: [-98.4916, 29.4252]
+    });
+
+    var delay = 5000;
+
+
+    setTimeout(function () {
+        geocode("Mcallen, Texas", mapboxToken).then(function(result){
+            map.flyTo({center: result, zoom: 10, speed: .4})
+    });
+    }, delay);
+
+
+
+    geocode("san antonio, tx", mapboxToken).then(function(results) {
+        console.log(results);
+        map.setCenter(results);
+        map.setZoom(0.5);
+    });
+
+
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-98.2235, 26.24079])
+        .addTo(map);
+
+    var hopTungPopup = new mapboxgl.Popup()
+        .setHTML("<p>Hop Tung Vietnamese Cuisine</p>");
+        marker.setPopup(hopTungPopup);
+
+
+
+
+    var marker2 = new mapboxgl.Marker()
+        .setLngLat([-98.221373, 26.250965])
+        .addTo(map);
+
+    var costaMesaPopup = new mapboxgl.Popup()
+        .setHTML("<p>Costa Mesa</p>");
+        marker2.setPopup(costaMesaPopup);
+
+
+    var marker3 = new mapboxgl.Marker()
+        .setLngLat([-98.150141, 26.299974])
+        .addTo(map);
+
+
+    var taqueriaPopup = new mapboxgl.Popup()
+        .setHTML("<p>Taqueria El Zarape</p>");
+        marker3.setPopup(taqueriaPopup);
+
+
+
+
+    //marker.remove() removes marker
+
+    // map.jumpTo({center: [-90.4916, 29.4252] }); < allows you to change the center
+</script>
+
+</body>
+</html>
