@@ -1,0 +1,48 @@
+table {
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+
+body {
+    background-color: black;
+    background-image: url(../images/coffeeshop.jpg); position: relative;
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+h1 {font-family: 'Indie Flower', cursive ;
+    font-weight: bold ;
+    color: white;
+
+
+}
+
+.coffee {
+    color: white;
+}
+
+header {
+    font-family: 'Indie Flower', cursive ;
+    color: white;
+    font-size: 50px;
+
+}
+
+h2,h3 {
+    font-family: 'Indie Flower', cursive ;
+    color: white;
+}
+
+section.title{
+    display: flex;
+    flex-direction: flew-wrap;
+
+}
