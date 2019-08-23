@@ -41,8 +41,3 @@ h2,h3 {
     color: white;
 }
 
-section.title{
-    display: flex;
-    flex-direction: flew-wrap;
-
-}
