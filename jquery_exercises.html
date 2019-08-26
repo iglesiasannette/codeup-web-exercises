@@ -24,11 +24,16 @@
 
 <script>$(document).ready(function() {
 
+//jquery or $ before parenthesis works
+
     $( '.codeup' ).css( 'border', '1px solid red' );
 
     $( 'li' ).css( 'font-size', '20px' );
+    //.css('background', 'palevioletred'); after the above line would work in changing the background of the li element
+    //as well
 
-    $('h1, p, ul').css('background-color', '#FFFF00');
+    $('h1, p, li').css('background-color', '#FFFF00');
+
 
     var contents = $('h1').html( );
     alert(contents);
