@@ -11,9 +11,6 @@
         visibility: visible;
 }
 
-        .highlight dd {
-            visibility: visible;
-        }
 
         body {margin: 10%;
             background-image: url(images/travel_poster_yosemite_national_park_portrait_-_catalogue_5.jpg);
@@ -40,6 +37,19 @@
 
         button {
             width: 50%
+        }
+
+
+
+        img {display: inline-grid;
+            height: 100%;
+            width: 100%;
+            opacity: 1;
+        }
+
+        .picture{
+            border: 10px 20px solid black;
+            opacity: 1;
         }
 
     </style>
@@ -142,6 +152,11 @@
     <br>
 </dl>
 
+<div class = "frame">
+    <div class="picture pic1"><img src="images/carlsbad.jpg" alt ="carlsbad"></div>
+    <div class="picture pic2"><img src="images/denali.jpg" alt="denali"></div>
+    <div class="picture pic3"><img src="images/everglades.jpeg" alt=""></div>
+</div>
     <h1>Facts About A Few Popular Parks</h1>
 
     <h3>Carlsbad Caverns</h3>
@@ -187,7 +202,7 @@
 
    $(document).ready(function() {
        $('h1').click(function(){
-           $('dd').toggle('invisible');
+           $('dd').toggle();
        });
 
         });
@@ -195,7 +210,7 @@
 
     $('button').click(function() {
         $('ul').each(function(index) {
-                $(this).children().last().css('background-color', '#FF0');
+                $(this).children().last().css('background-color', 'palegreen');
         });
     });
 
@@ -212,13 +227,14 @@
             ('color', 'white');
     });
 
-    // $('dt').click(function(){
-        //     $('dd').css('font-weight', 'bold');
-        // });
 
 
 
 
+    $('ul').click(function() {
+        $(this).children().first().css('color', 'blue');
+
+    });
 
 
     //
