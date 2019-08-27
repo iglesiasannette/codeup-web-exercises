@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Konami Code</title>
+
+<style>
+    img{
+        visibility: hidden;
+    }
+
+</style>
+</head>
+<body>
+<h1 class="title">Konami Code</h1>
+
+<main class="code">
+<p>
+    Then enter the following code using your keyboard:
+</p>
+
+<p>
+    <span>&uarr;</span>
+    <span>&uarr;</span>
+    <span>&darr;</span>
+    <span>&darr;</span>
+    <span>&larr;</span>
+    <span>&rarr;</span>
+    <span>&larr;</span>
+    <span>&rarr;</span>
+    <span>B</span>
+    <span>A</span>
+    <span>Enter</span>
+</p>
+
+<div> <img src="castlevania/castlevania.gif" alt=""></div>
+
+</main>
+
+
+
+
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>$(document).ready(function() {
+    "use strict";
+
+
+    $('h1').css('text-align','center').css({fontFamily: 'Atari Classic Chunky'}).css("margin","10%")
+        .css('textShadow','#6374AB 10px -2px 2px');
+    $('main').css('text-align','center').css({fontFamily: 'Atari Classic Chunky'});
+
+    var konami = '38,38,40,40,37,39,37,39,66,65,13';
+    var keys = [];
+    $(document).keyup(function (e) {
+        keys.push(e.keyCode);
+        if (keys.toString().indexOf(konami) >= 0) {
+            alert('You have added 30 lives!');
+            $('h1').html("Castlevania").css({fontFamily: 'Atari Classic Chunky'}).css({fontSize: '500%'})
+                .css('color', '#C0C0C0').css('textShadow','#32CD32 10px -2px 2px');
+            $('p').html("");
+            $('main').css('background-image', 'url(castlevania/castlevania.gif)').css('background-color', 'black').css('background-repeat', 'no-repeat').css('background-position', 'center').css('margin', '10%');
+            $('body').css('background-image', 'url(grey-brick-background.jpg)');
+            var audio = new Audio('castlevania/05 Abandoned Castle ~The Curse of Darkness~.mp3');
+            audio.play();
+
+
+        }
+    });
+
+
+
+
+});</script>
+
+</body>
+</html>
