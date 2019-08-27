@@ -7,17 +7,18 @@
 
     <style>
 
-
+    dd {
+        visibility: visible;
+}
 
         .highlight dd {
-            visibility: hidden;
-            background-color: palegreen;
-            color: #111111;
+            visibility: visible;
         }
 
         body {margin: 10%;
-                background-image: url(images/travel_poster_yosemite_national_park_portrait_-_catalogue_5.jpg) ;
-
+            background-image: url(images/travel_poster_yosemite_national_park_portrait_-_catalogue_5.jpg);
+            background-size: 100%;
+            background-attachment: fixed;
 
         }
 
@@ -34,6 +35,11 @@
         dt {
             font-weight: bold;
             font-family: 'Abel', sans-serif;
+        }
+
+
+        button {
+            width: 50%
         }
 
     </style>
@@ -135,6 +141,43 @@
 </dd>
     <br>
 </dl>
+
+    <h1>Facts About A Few Popular Parks</h1>
+
+    <h3>Carlsbad Caverns</h3>
+    <ul id="national-parks">
+        <li>Carlsbad Caverns National Park covers a total area of 46,766 acres</li>
+        <li>The number of people visiting Carlsbad Caverns in 2017 was 520,026 *</li>
+        <li>Carlsbad Caverns was made a national park on May 14, 1930</li>
+        <li>There is no entrance fee for Carlsbad Caverns National Park, but there are fees to enter caves.r</li>
+
+    </ul>
+    <h3>Denali</h3>
+    <ul>
+        <li>As you make your journey through DNP, you might be surprised to learn that you will
+            actually be following in the footsteps of individuals tracing back to the last
+            Ice Age 12,000 years ago.</li>
+        <li>In 1896, a gold prospector by the name of William Dickey (who came to Alaska during the
+            Cook Inlet gold rush) named the tallest mountain in the park, Mt. McKinley after the
+            presidential nominee at the time, William McKinley. It was said that he named it after
+            McKinley because of his support for the gold rush and gold standard. The president was, however, from Ohio and never even visited the state of Alaska. In 2015, the mountain was officially changed to the name that the locals always referred to it as; Denali.</li>
+        <li>DNP is home to the highest peak in North America, Denali. Called "The High One" in language
+            of the Athabascan tribe, this towering peak stands at 20,320 feet above sea level.</li>
+        <li>The year of 1910 marked the first time that anyone had successfully summited Denali.
+            It was a group of local residents who celebrated with hot chocolate and donuts.</li>
+
+    </ul>
+
+    <h3>Everglades</h3>
+    <ul>
+        <li>Largest continuous stand of sawgrass prairie in North America.</li>
+        <li>Home of thirteen endangered and ten threatened species.</li>
+        <li>Most significant breeding grounds for tropical wading birds in North America.</li>
+        <li>Only subtropical preserve on the North American continent.</li>
+
+    </ul>
+
+    <button>Fun Fact</button>
  <p>* All information provided by NPS.org</p>
 </main>
 <script src="js/jquery-2.2.4.js"></script>
@@ -143,11 +186,43 @@
     "use strict";
 
    $(document).ready(function() {
-       $('body').click(function(){
+       $('h1').click(function(){
            $('dd').toggle('invisible');
        });
 
         });
+
+
+    $('button').click(function() {
+        $('ul').each(function(index) {
+                $(this).children().last().css('background-color', '#FF0');
+        });
+    });
+
+
+    $('h3').click(function() {
+            $(this).next().css('font-weight', 'bold');
+
+    });
+
+
+
+    $('dt').click(function() {
+            $(this).next().next().css('font-weight', 'bold').css('background', 'black').css
+            ('color', 'white');
+    });
+
+    // $('dt').click(function(){
+        //     $('dd').css('font-weight', 'bold');
+        // });
+
+
+
+
+
+
+    //
+    // $('li').first().css('background-color', 'blue');
 </script>
 </body>
 </html>
