@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mapbox 1</title>
+    <title>Mapbox 2</title>
 
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel='stylesheet' />
@@ -17,17 +17,16 @@
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
         zoom: 10,
-        center: [-98.230011, 26.203407]
+        center: [-77.0369, 38.9072]
     });
 
-    var delay = 5000;
 
-    setTimeout(function () {
-        map.setStyle( 'mapbox://styles/mapbox/satellite-v9');
-        map.setZoom(3.4);
-    }, delay);
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-77.0502, 38.8893])
+        .addTo(map);
+        map.setZoom(12);
 
-
+    //marker.remove() removes marker
     // map.jumpTo({center: [-90.4916, 29.4252] }); < allows you to change the center
 </script>
 
