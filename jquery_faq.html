@@ -212,6 +212,7 @@
 
         });
 
+//this button highlights the last li item from each ul
 
     $('button').click(function() {
         $('ul').each(function(index) {
@@ -219,7 +220,7 @@
         });
     });
 
-
+//this click function targets the h3 tags and changes the font weight to bold of the corresponding ul
     $('h3').click(function() {
             $(this).next().css('font-weight', 'bold');
 
@@ -235,7 +236,7 @@
 
 
 
-
+//this click function targets the ul's, the children of the clicked ul (the li's), then the first li and changes the font color to blue
     $('ul').click(function() {
         $(this).children().first().css('color', 'blue');
 

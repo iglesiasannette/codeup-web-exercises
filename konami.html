@@ -54,14 +54,14 @@
     var konami = '38,38,40,40,37,39,37,39,66,65,13';
     var keys = [];
     $(document).keyup(function (e) {
-        keys.push(e.key);
+        keys.push(e.keyCode);
         if (keys.toString().indexOf(konami) >= 0) {
             alert('You have added 30 lives!');
             $('h1').html("Castlevania").css({fontFamily: 'Atari Classic Chunky'}).css({fontSize: '500%'})
                 .css('color', '#C0C0C0').css('textShadow','#32CD32 10px -2px 2px');
             $('p').html("");
             $('main').css('background-image', 'url(castlevania/castlevania.gif)').css('background-color', 'black').css('background-repeat', 'no-repeat').css('background-position', 'center').css('margin', '10%');
-            $('body').css('background-image', 'url(grey-brick-background.jpg)');
+            $('body').css('background-image', 'url(castlevania/grey-brick-background.jpg)');
             var audio = new Audio('castlevania/05 Abandoned Castle ~The Curse of Darkness~.mp3');
             audio.play();
 
