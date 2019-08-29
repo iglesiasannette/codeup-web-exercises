@@ -57,6 +57,16 @@
             opacity: 1;
         }
 
+        ul {
+            display: none;
+        }
+
+
+        h2 {
+            display: none;
+        }
+
+
     </style>
 
 
@@ -67,6 +77,11 @@
 <main>
 <dl>
 
+    <div>
+        <h1>Would you like to sign up for our newsletter?</h1>
+        <span><button class = 'x'> No Thanks </button></span>
+    </div>
+<h2>Would you like to register for this site?</h2>
 <h1>10 FAQS About National Parks</h1>
     <br>
     <hr>
@@ -107,6 +122,7 @@
 <br>
     <dt><em>5. How many areas are in the National Park System?</em></dt>
     <br>
+    <div id = #popup><h2>Sign Up For Our News Letter</h2></div>
 <dd>
     The system includes 419 areas covering more than 85 million acres in every state, the District of
     Columbia, American Samoa, Guam, Puerto Rico, and the Virgin Islands. These areas include national parks,
@@ -226,7 +242,14 @@
 
     });
 
+    // $('h3').click(function() {
+    //     $(this).next().css('font-weight', 'bold');
+    //
+    // });
 
+    $('h3').click(function() {
+        $(this).next().slideToggle('visible')
+    });
 
     $('dt').click(function() {
             $(this).next().next().css('font-weight', 'bold').css('background', 'black').css
@@ -243,8 +266,20 @@
     });
 
 
-    //
-    // $('li').first().css('background-color', 'blue');
+    $('.x').click(function(e) {
+        // var $dBtn = $('#disappear-btn'); OR...
+        //var $dBtn = $(this); "e" needs to be placed in the input OR..
+
+        var x = $(e.target); /*"e" needs to be placed in the input ;*/
+
+        x.parent().parent().css("display", "none");
+    });
+
+    //After the user has been on the page for 8 seconds, an h2 should
+    // fade in that asks the user to register for the site.
+
+    $('h2').delay(8000).fadeIn();
+
 </script>
 </body>
 </html>
