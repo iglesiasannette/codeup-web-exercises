@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Category</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts">
+    </tbody>
+</table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+(function() {
+    "use strict";
+    // TODO: Create an ajax GET request for /data/inventory.json
+
+    $.ajax('./data/inventory.json').done(function(data){
+
+       console.log(data);
+
+    });
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+
+
+    //this is a local file request. i referenced the local file and passed the parameter
+    //of data to refer to the contents within the file.
+
+    $.ajax('./data/inventory.json').done(function(data){
+
+        //assigned this variable name to refer to  the inventory list
+        var inventoryList = "";
+
+    // <tr>
+    //     <td>Hammer</td>
+    //     <td>25</td>
+    //     <td>tool</td>
+    //     <td>$20</td>
+    // </tr>
+
+        for(var i = 0; i < data.length; i++){
+
+            //1st foundational for loop
+            // for(var i = 0; i < data.length; i++){
+            //     console.log(data[i].title);
+            // }
+
+         //2nd foundational for-loop
+            //     inventoryList += '<tr> ';
+            //     inventoryList += '<th>' + data[0].title +'</th>';
+            //     inventoryList += '<th>' + data[0].quantity + '</th>';
+            //     inventoryList += '<th>' + data[0].categories + '</th>';
+            //     inventoryList += '<th>' + data[0].price + '</th>';
+            //     inventoryList += '</tr> ';
+            //
+        // }
+
+            //final loop that loops throw each object and their properties
+            inventoryList += '<tr> ';
+            inventoryList += '<th>' + data[i].title +'</th>';
+            inventoryList += '<th>' + data[i].quantity + '</th>';
+            inventoryList += '<th>' + data[i].categories + '</th>';
+            inventoryList += '<th>' + data[i].price + '</th>';
+            inventoryList += '</tr> ';
+
+        }
+
+        $('#insertProducts').html(inventoryList);
+    });
+})();
+</script>
+
+</body>
+</html>
