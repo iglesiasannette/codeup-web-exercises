@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traversal Lecture</title>
+</head>
+<body>
+
+<main>
+
+    <article>
+        <h3>Top Bonds</h3>
+        <section>Beginning</section>
+        <hr>
+        <section>Middle</section>
+        <hr>
+        <section>End</section>
+        <hr>
+        <section>
+
+            <ol>
+                <li>Craig</li>
+                <li>Brosnan</li>
+                <li>Connery</li>
+                <li>Dalton</li>
+                <li>Moore</li>
+            </ol>
+
+        </section>
+
+    </article>
+
+    <article>
+        <h3>Top Books</h3>
+        <section>Beginning</section>
+        <hr>
+        <section>Middle</section>
+        <hr>
+        <section>End</section>
+        <hr>
+        <section>
+
+            <ol>
+                <li>LOTR</li>
+                <li>1984</li>
+                <li>20,000 Legues Under the Sea</li>
+                <li>R is for Rocket</li>
+                <li>The War of the Worlds</li>
+            </ol>
+
+        </section>
+
+    </article>
+
+    <article>
+        <h3>Top Pets</h3>
+        <section>Beginning</section>
+        <hr>
+        <section>Middle</section>
+        <hr>
+        <section>End</section>
+        <hr>
+        <section>
+
+            <ol>
+                <li>Dogs</li>
+                <li>Cats</li>
+                <li>Bats</li>
+                <li>Rats</li>
+                <li>Gnats</li>
+            </ol>
+
+        </section>
+
+    </article>
+
+</main>
+
+<script src="../js/jquery-2.2.4.js"></script>
+
+<script>
+
+    "use strict";
+
+// 1. highlight all the sections
+    $('section').each(function(index) {
+        $(this).css('background-color', '#FF0');
+    });
+//2. Highlight all the articles
+    $('article').each(function(index) {
+        $(this).css('background-color', '#FF0');
+    });
+
+//3. highlight the first article
+
+        $('article').first().css('background-color', '#FF0');
+
+//4. highlight the last article
+
+
+
+    // $('article').last().css('background-color', '#FF0');
+
+//5. highlight the second article
+//     $('article:nth-of-type(2)').css('background-color', '#FF0');
+
+//6. Highlight the third li of the entire page
+    $('li:nth-of-type(3)').css('background-color', '#FF0');
+
+// 7. Highlight the children of all the ordered lists
+
+     $('ol').children().css('background-color', '#FF0');
+
+//8.  Highlight all the sections of the first article
+
+
+        $('article').first().children().next().css('background-color', '#ff0');
+
+//9. Highlight the ordered list of the first article
+
+    $('article').first().children().last().css('background-color', '#ff0');
+
+//10. Highlight the first nested element inside all article elements
+
+    $('article').each(function(index) {
+        $(this).children().first().css('background-color', '#ff0');
+    });
+
+//11. Highlight the second list item of all ordered lists
+
+    $('ol').each(function(index){
+        $(this).children().first().next().css('background-color', '#ff0')
+    });
+
+//12. Highlight the third list item of all ordered lists
+
+    $('ol').each(function(index){
+        $(this).children().first().next().next().css('background', '#ff0');
+    });
+
+//13. Highlight the first li of the second ordered list
+
+
+    $('article').first().next().children().last().children().children().first().css('background-color', 'yellow');
+
+    //14.  alert each of the top five items when double clicking on the header for a section
+
+     $('h3').dblclick(function(){
+        console.log($(this).parent().children().last().children().children());
+        $(this).parent().children().last().children().children().each(function(index, element){
+            alert($(element).text());
+        });
+    });
+
+ // / Give a azure background color to every other list item (first item should be azure)
+
+    $('ol').each(function(indexI, element) {
+        $(element).children().each(function(indexJ) {
+            // console.log(indexJ);
+            if (indexJ % 2 == 0) {
+                console.log(indexJ);
+                $(this).css('background-color', 'azure');
+            }
+        });
+    });
+</script>
+
+
+</body>
+</html>
