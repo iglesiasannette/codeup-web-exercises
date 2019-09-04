@@ -21,7 +21,7 @@
         main {
             height: 75%;
             width: 75%;
-            margin-left: 8.5em;
+            margin-left: 10em;
             margin-top: 7em;
             margin-bottom: 7em;
             position: relative;
@@ -164,6 +164,10 @@
 
     }
 
+
+
+
+
     function updateWeather(inputLat, inputLon){
         $.get('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' + darkSkyKey + '/' + inputLat + "," + inputLon).done(function (data) {
             console.log(data);
@@ -231,7 +235,12 @@
             .setLngLat([-98.4916, 29.4252])
             .addTo(map);
 
-    function onDragEnd() {
+
+
+
+
+
+        function onDragEnd() {
         var lngLat = marker.getLngLat();
         coordinates.style.display = 'block';
         coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
@@ -282,6 +291,12 @@
     marker.on('dragend', onDragEnd);
 
     onDragEnd();
+
+
+
+
+
+
 
         $('#map').css('margin', 'auto');
         $('.card').css('height', '100%')
