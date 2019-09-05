@@ -56,6 +56,23 @@
         #coordinates{
             visibility: hidden;
         }
+
+        .header {
+
+            height: 50px;
+            width: 100%
+
+        }
+
+            h1 {
+                display: flex;
+                justify-content: center;
+                font-family: ".Helvetica Neue DeskInterface";
+            }
+
+        .typed {
+            color: #111111;
+        }
     </style>
 </head>
 <body>
@@ -63,7 +80,14 @@
 <!--// main title //-->
 <!--<div class="title"> <h1>San Antonio Weather</h1></div>-->
 
-<main>
+<div>
+
+
+
+<div class="header"></div>
+    <h1><span class="typed"></span></h1>
+</div>
+
 <div id="container">
 
    <div id="weatherbox" class="row">
@@ -73,7 +97,8 @@
 
 
 
-
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css' type='text/css' />
 <div id='map' style='width: 82.5%; height: 600px'></div>
 <form id="updateForecast">
     <div class="row justify-content-center">
@@ -91,38 +116,40 @@
 </div>
 <div id='coordinates' class='coordinates'></div>
 
-
-
-<script src = "js/keys.js"></script>
+    <script src = "js/keys.js"></script>
 <script src="js/jquery-2.2.4.js"></script>
 
+<script src="js/typed.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
 <script>
     "use strict";
-    var arrayOfIcons = [
 
-        {status: "clear-day", graphic: 'icons/animated/day.svg'},
-        {status: "clear-night", graphic: 'icons/animated/night.svg'},
-        {status: 'rain', graphic: 'icons/animated/rainy-7.svg'},
-        {status: 'snow', graphic: 'icons/animated/snow.svg' },
-        {status: 'sleet', graphic: 'icons/SVG/Cloud-Snow.svg' },
-        {status: 'wind', graphic: 'icons/SVG/Wind.svg' },
-        {status: 'fog', graphic: 'icons/SVG/Cloud-Fog-Alt.svg' },
-        {status: 'cloudy', graphic: 'icons/animated/cloudy.svg' },
-        {status: 'partly-cloudy-day', graphic: 'icons/animated/cloudy.svg' },
-        {status: 'partly-cloudy-night', graphic: 'icons/animated/cloudy-night-3.svg'}
+    // ========================================================================= //
+    //  Typed Js
+    // ========================================================================= //
 
-    ];
+    var typed = $(".typed");
+
+    $(function() {
+        typed.typed({
+            strings: ["Weather...", "Up to the minute",],
+            typeSpeed: 100,
+            loop: true,
+        });
+    });
+
+    ////// Ajax request for San Antonio Coordinates /////////
 
     $.get('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' + darkSkyKey + '/29.4241, -98.4936').done(function (data) {
         console.log(data);
 
-        //assigned this variable name to refer to  the forecast function
+
+       //// function to dynamically change the info on the page from the dark-sky API/////
 
 
-        var forecast = "";
+        var forecast = "";   /*assigned this variable name to refer to  the forecast function*/
 
 
         for (var i = 0; i < 3; i++) {
@@ -155,6 +182,23 @@
     });
 
     ///// Function to Display animated icons  //////
+
+    var arrayOfIcons = [
+
+        {status: "clear-day", graphic: 'icons/animated/day.svg'},
+        {status: "clear-night", graphic: 'icons/animated/night.svg'},
+        {status: 'rain', graphic: 'icons/animated/rainy-7.svg'},
+        {status: 'snow', graphic: 'icons/animated/snow.svg' },
+        {status: 'sleet', graphic: 'icons/SVG/Cloud-Snow.svg' },
+        {status: 'wind', graphic: 'icons/SVG/Wind.svg' },
+        {status: 'fog', graphic: 'icons/SVG/Cloud-Fog-Alt.svg' },
+        {status: 'cloudy', graphic: 'icons/animated/cloudy.svg' },
+        {status: 'partly-cloudy-day', graphic: 'icons/animated/cloudy.svg' },
+        {status: 'partly-cloudy-night', graphic: 'icons/animated/cloudy-night-3.svg'}
+
+    ];
+
+    ///// function to display the icon ///
     function imageStatus(arrayOfIcons, apiStatus){
         for (var i = 0; i < arrayOfIcons.length; i++){
             if(arrayOfIcons[i].status === apiStatus){
@@ -166,7 +210,7 @@
 
 
 
-
+////// Updates the console log and information on the cells with the according weather /////
 
     function updateWeather(inputLat, inputLon){
         $.get('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' + darkSkyKey + '/' + inputLat + "," + inputLon).done(function (data) {
@@ -219,7 +263,9 @@
     });
 
 
-    // MAP//
+   ////////////////////// MAP and MARKER /////////////////////////
+
+
         mapboxgl.accessToken = mapboxToken;
         var map = new mapboxgl.Map({
             container: 'map',
@@ -236,7 +282,11 @@
             .addTo(map);
 
 
+        map.addControl(new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        // mapboxgl: mapboxgl
 
+    }));
 
 
 
@@ -297,9 +347,8 @@
 
 
 
-
         $('#map').css('margin', 'auto');
-        $('.card').css('height', '100%')
+        $('.indWeatherBox').css('height', '100%')
 
 </script>
 
