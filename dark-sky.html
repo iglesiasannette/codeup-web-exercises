@@ -14,8 +14,7 @@
     <style>
 
         body {
-            /*background-image: linear-gradient(to top, #211a35, #3c4b64, #65808f, #9db6ba, #deedea);*/
-            background-image: linear-gradient(to left top, #622c43, #7d3a5c, #974977, #b05a96, #c86cb7, #db73ba, #ed7abc, #ff82bd, #ff899f, #ff9981, #ffb06a, #fbc85f);
+            background-image: linear-gradient(to left top, #6ba0d1, #5d8ec1, #507db1, #446ca1, #385b91, #285486, #174e7a, #00476f, #004662, #004353, #0d4045, #1d3b39);
         }
 
         main {
@@ -39,7 +38,7 @@
 
         .card-header {
             font-family: sans-serif;
-            background-image: linear-gradient(to left top, #2c4662, #3b5779, #4a6992, #5b7baa, #6d8ec4, #6d9ed6, #6caee7, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+            background-image: linear-gradient(to left bottom, #9a6bd1, #8166c3, #6a5fb4, #5459a4, #405193, #3a4a85, #354278, #2f3b6b, #31335f, #302b52, #2e2446, #2b1d3b);
         }
 
         .card li {
@@ -67,7 +66,7 @@
             h1 {
                 display: flex;
                 justify-content: center;
-                font-family: "Gill Sans" ;
+                font-family: 'Playfair Display', serif;
                 color: white;
                 font-weight: bold;
             }
@@ -76,6 +75,7 @@
             color: white;
             font-weight: bold;
         }
+
     </style>
 </head>
 <body>
@@ -125,7 +125,7 @@
 
     $(function() {
         typed.typed({
-            strings: ["Weather...", "Up to the minute",],
+            strings: ["Your Anywhere Forecast...","Up To The Minute",],
             typeSpeed: 100,
             loop: true,
         });
@@ -154,7 +154,7 @@
            var forecast = "";   /*assigned this variable name to refer to  the forecast function*/
 
 
-           for (var i = 0; i < 3; i++) {
+           for (var i = 0; i < 6; i++) {
 
                var date = new Date(data.daily.data[i].time * 1000).toDateString();
                var tempHi = Math.round(data.daily.data[i].apparentTemperatureHigh);
@@ -163,9 +163,9 @@
 
                forecast += "<div class='col-lg-4 m-0 p-0'>";
                forecast += '<div id="indWeatherBox' + [i] + '" class="card"><h4 class=\'my-0 font-weight-normal\'>';
-               forecast += '<div><p class="card-header text-center  bg-info font-weight-light text-white">' + date + '</p></div>';
+               forecast += '<div><p class="card-header text-center  bg-info font-weight-light text-white ">' + date + '</p></div>';
                forecast += "<ul class=\"list-group list-group-flush w-100 align-items-stretch\">";
-               forecast += '<li class="lead font-weight-light list-group-item text-center ">  ' + tempHi + '&#176;/ ' + tempLo + '&#176;</li>';
+               forecast += '<li class="lead font-weight-light list-group-item text-center "><h3>' + tempHi + '&#176;/ ' + tempLo + '&#176;</h3></li>';
                forecast += "<li class='list-group-item text-center \"'><img mx-auto src='" + imageStatus(arrayOfIcons, data.daily.data[i].icon) + "'></li>";
                forecast += '<li class="lead font-weight-light list-group-item text-center d-inline-block"">Over Cast: ' + data.daily.data[i].cloudCover + '</p>';
                forecast += '<p class="lead font-weight-light">Humidity:  ' + data.daily.data[i].humidity + '</p>';
